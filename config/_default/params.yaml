@@ -33,7 +33,7 @@ header:
   navbar:
     enable: true
     blox: "navbar"
-    align: "center"
+    align: "right"
     fixed_to_top: true
     logo:
       text: ""
@@ -41,7 +41,7 @@ header:
       filename: "logo.svg"
     button:
       enable: true
-      text: "Get Started"
+      text: "Access to the database"
       url: "https://hugoblox.com/templates/details/docs/"
     show_search: true
     show_theme_chooser: true
@@ -58,8 +58,7 @@ footer:
 
 # Localization
 locale:
-  date_format: 'Jan 2, 2006'
-  time_format: '3:04 PM'
+  date_format: '20 Aout 2024'
 
 # Site features
 features:
