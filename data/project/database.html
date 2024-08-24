@@ -9,24 +9,24 @@
     <h1>{{ .Title }}</h1>
 
     {{ $data := getCSV "," "data/project/Test.csv" }}
-    {{ $currentChapter := "" }}
+    {{ $currentChapitre := "" }}
 
     <div>
     {{ range $data }}
-        {{ $chapter := index . 0 }}
-        {{ $section := index . 1 }}
-        {{ $details := index . 2 }}
+        {{ $chapitre := index . 0 }}
+        {{ $paragraphe := index . 1 }}
+        {{ $contenu := index . 2 }}
 
-        {{ if ne $chapter $currentChapter }}
-            {{ if ne $currentChapter "" }}
+        {{ if ne $chapitre $currentChapitre }}
+            {{ if ne $currentchapitre "" }}
                 </ul>
             {{ end }}
-            <h2>{{ $chapter }}</h2>
+            <h2>{{ $chapitre }}</h2>
             <ul>
-            {{ $currentChapter = $chapter }}
+            {{ $currentChapitre = $chapitre }}
         {{ end }}
 
-        <li><strong>{{ $section }}:</strong> {{ $details }}</li>
+        <li><strong>{{ $paragraphe }}:</strong> {{ $contenu }}</li>
     {{ end }}
  
     </ul>
