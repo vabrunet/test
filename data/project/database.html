@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }}</title>
+</head>
+<body>
+    <h1>{{ .Title }}</h1>
+
+    {{ $data := getCSV "," "data/project/Test.csv" }}
+    {{ $currentChapter := "" }}
+
+    <div>
+    {{ range $data }}
+        {{ $chapter := index . 0 }}
+        {{ $section := index . 1 }}
+        {{ $details := index . 2 }}
+
+        {{ if ne $chapter $currentChapter }}
+            {{ if ne $currentChapter "" }}
+                </ul>
+            {{ end }}
+            <h2>{{ $chapter }}</h2>
+            <ul>
+            {{ $currentChapter = $chapter }}
+        {{ end }}
+
+        <li><strong>{{ $section }}:</strong> {{ $details }}</li>
+    {{ end }}
+ 
+    </ul>
+    </div>
+</body>
+</html>
